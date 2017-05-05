@@ -1,0 +1,1734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.3.v20131216-0430 Build &lt;4.2.3.v20131216-0430></property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">Report Libraries/ThemesReportItems3.rptlibrary</property>
+            <property name="namespace">ThemesReportItems3</property>
+        </structure>
+    </list-property>
+    <parameters>
+        <scalar-parameter name="Airport" id="109">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant"></value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.datatools.connectivity.oda.flatfile" name="Data Source" id="63">
+            <property name="HOME">Data/</property>
+            <property name="DELIMTYPE">COMMA</property>
+            <property name="CHARSET">UTF-8</property>
+            <property name="INCLCOLUMNNAME">YES</property>
+            <property name="INCLTYPELINE">YES</property>
+            <property name="TRAILNULLCOLS">NO</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.datatools.connectivity.oda.flatfile.dataSet" name="Data Set" id="64">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">airport</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">airport</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">airport_city</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">airport_city</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">airport_state</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">airport_state</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">airport_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">airport_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">total_flights</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">total_flights</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">total_delays</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">total_delays</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">total_delay_minutes</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">total_delay_minutes</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">airport</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">airport_city</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">airport_state</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">airport_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">total_flights</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">total_delays</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">total_delay_minutes</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="beforeOpen"><![CDATA[dropDownList = "";]]></method>
+            <method name="beforeClose"><![CDATA[reportContext.setPersistentGlobalVariable("dropDownList",dropDownList);]]></method>
+            <method name="onFetch"><![CDATA[temp = row["airport"] + " - " + row["airport_name"] + " (" +  row["airport_city"] + ", " + row["airport_state"] + ")";
+if (dropDownList != ""){
+	dropDownList = dropDownList + "|" + temp;
+}
+else{
+	dropDownList = temp;
+}]]></method>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">airport</property>
+                    <property name="nativeName">airport</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">airport_city</property>
+                    <property name="nativeName">airport_city</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">airport_state</property>
+                    <property name="nativeName">airport_state</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">airport_name</property>
+                    <property name="nativeName">airport_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">total_flights</property>
+                    <property name="nativeName">total_flights</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">total_delays</property>
+                    <property name="nativeName">total_delays</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">total_delay_minutes</property>
+                    <property name="nativeName">total_delay_minutes</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "airport", "airport_city", "airport_state", "airport_name", "total_flights", "total_delays", "total_delay_minutes" from "aiport_total_delay_total_delay_minutes.csv" : {"airport","airport",STRING;"airport_city","airport_city",STRING;"airport_state","airport_state",STRING;"airport_name","airport_name",STRING;"total_flights","total_flights",INT;"total_delays","total_delays",INT;"total_delay_minutes","total_delay_minutes",DOUBLE}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>airport</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>airport</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>airport_city</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>airport_city</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>airport_state</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>airport_state</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>airport_name</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>airport_name</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>total_flights</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>total_flights</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>total_delays</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>total_delays</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>total_delay_minutes</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>total_delay_minutes</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.datatools.connectivity.oda.flatfile.dataSet" name="Data Set1" id="76">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">airport</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">airport</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">airport_city</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">airport_city</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">airport_state</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">airport_state</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">airport_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">airport_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">total_flights</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">total_flights</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">total_delays</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">total_delays</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">total_delay_minutes</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="heading">total_delay_minutes</text-property>
+                </structure>
+            </list-property>
+            <list-property name="filter">
+                <structure>
+                    <property name="operator">eq</property>
+                    <expression name="expr" type="javascript">if(params["Airport"] == null || params["Airport"] == ""){&#13;
+	"1";&#13;
+}&#13;
+else{&#13;
+	row["airport"];&#13;
+}</expression>
+                    <simple-property-list name="value1">
+                        <value type="javascript">if(params["Airport"] == null || params["Airport"] == ""){&#13;
+	"1";&#13;
+}&#13;
+else{&#13;
+	params["Airport"].value.substr(0,3);&#13;
+}</value>
+                    </simple-property-list>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">airport</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">airport_city</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">airport_state</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">airport_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">total_flights</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">total_delays</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">total_delay_minutes</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">airport</property>
+                    <property name="nativeName">airport</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">airport_city</property>
+                    <property name="nativeName">airport_city</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">airport_state</property>
+                    <property name="nativeName">airport_state</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">airport_name</property>
+                    <property name="nativeName">airport_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">total_flights</property>
+                    <property name="nativeName">total_flights</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">total_delays</property>
+                    <property name="nativeName">total_delays</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">total_delay_minutes</property>
+                    <property name="nativeName">total_delay_minutes</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "airport", "airport_city", "airport_state", "airport_name", "total_flights", "total_delays", "total_delay_minutes" from "aiport_total_delay_total_delay_minutes.csv" : {"airport","airport",STRING;"airport_city","airport_city",STRING;"airport_state","airport_state",STRING;"airport_name","airport_name",STRING;"total_flights","total_flights",INT;"total_delays","total_delays",INT;"total_delay_minutes","total_delay_minutes",DOUBLE}]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>airport</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>airport</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>airport_city</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>airport_city</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>airport_state</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>airport_state</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>airport_name</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>airport_name</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>total_flights</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>total_flights</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>total_delays</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>total_delays</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>total_delay_minutes</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>-1</design:precision>
+            <design:scale>-1</design:scale>
+            <design:nullability>Unknown</design:nullability>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>total_delay_minutes</design:label>
+            <design:formattingHints/>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">us-letter</property>
+            <property name="orientation">landscape</property>
+            <property name="topMargin">0in</property>
+            <property name="leftMargin">0in</property>
+            <property name="bottomMargin">0in</property>
+            <property name="rightMargin">0in</property>
+            <property name="borderBottomColor">#000000</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">#000000</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">#000000</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">#000000</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="height">5in</property>
+            <property name="width">3in</property>
+            <property name="headerHeight">0in</property>
+            <property name="footerHeight">0in</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="7">
+            <property name="dataSet">Data Set1</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">airport</property>
+                    <text-property name="displayName">airport</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["airport"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">airport_city</property>
+                    <text-property name="displayName">airport_city</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["airport_city"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">airport_state</property>
+                    <text-property name="displayName">airport_state</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["airport_state"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">airport_name</property>
+                    <text-property name="displayName">airport_name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["airport_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">total_flights</property>
+                    <text-property name="displayName">total_flights</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["total_flights"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">total_delays</property>
+                    <text-property name="displayName">total_delays</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["total_delays"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">total_delay_minutes</property>
+                    <text-property name="displayName">total_delay_minutes</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["total_delay_minutes"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">DelayedFlights</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["total_delays"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">MinutesLost</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["total_delay_minutes"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">TotalFlights</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["total_flights"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">PercentDelayed</property>
+                    <expression name="expression" type="javascript">row["DelayedFlights"] / row["TotalFlights"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">PeopleFrustrated</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["total_delays"] * 67;</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">MinutesInconvenienced</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["total_delay_minutes"] * 67;</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">ComparedToAverage</property>
+                    <expression name="expression" type="javascript">row["DelayedFlights"] / row["TotalFlights"] - 0.22281455362119285;</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="8">
+                <property name="width">17%</property>
+            </column>
+            <column id="196">
+                <property name="width">16%</property>
+            </column>
+            <column id="9">
+                <property name="width">17%</property>
+            </column>
+            <column id="208">
+                <property name="width">17%</property>
+            </column>
+            <column id="220">
+                <property name="width">16%</property>
+            </column>
+            <column id="10">
+                <property name="width">17%</property>
+            </column>
+            <row id="11">
+                <cell id="12">
+                    <property name="colSpan">6</property>
+                    <property name="rowSpan">1</property>
+                    <property name="textAlign">center</property>
+                    <image id="69">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="height">2.2916666666666665in</property>
+                        <property name="width">4.166666666666667in</property>
+                        <expression name="bookmark" type="javascript">"HeaderImage"</expression>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">images/fda.jpg</expression>
+                    </image>
+                </cell>
+            </row>
+            <row id="15">
+                <cell id="16">
+                    <property name="colSpan">6</property>
+                    <property name="rowSpan">1</property>
+                    <text id="68">
+                        <property name="backgroundImage">images/fdaintro.jpg</property>
+                        <property name="fontSize">12px</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingLeft">10pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <property name="paddingRight">10pt</property>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"MyLabel"</expression>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<font align="center">TODAY'S AIRPORTS ARE BUSIER THAN EVER</font><br />
+<font align="center" color="red">FLIGHT DELAYS ARE MORE COMMON EVERY DAY</font><br />
+<font align="center">AIRPORTS ARE TRYING TO KEEP UP WITH DEMAND</font><br />]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="19">
+                <expression name="bookmark" type="javascript">"searchDiv"</expression>
+                <cell id="20">
+                    <property name="colSpan">6</property>
+                    <property name="rowSpan">1</property>
+                    <property name="textAlign">center</property>
+                    <text id="67">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="visibility">
+                            <structure>
+                                <property name="format">all</property>
+                                <expression name="valueExpr" type="javascript">true</expression>
+                            </structure>
+                        </list-property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">airport</property>
+                                <text-property name="displayName">airport</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["airport"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">airport_city</property>
+                                <text-property name="displayName">airport_city</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["airport_city"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">airport_state</property>
+                                <text-property name="displayName">airport_state</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["airport_state"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">airport_name</property>
+                                <text-property name="displayName">airport_name</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["airport_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">total_flights</property>
+                                <text-property name="displayName">total_flights</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["total_flights"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">total_delays</property>
+                                <text-property name="displayName">total_delays</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["total_delays"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">total_delay_minutes</property>
+                                <text-property name="displayName">total_delay_minutes</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["total_delay_minutes"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                        </list-property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Hidden Text]]></text-property>
+                    </text>
+                    <text id="65">
+                        <property name="paddingTop">5pt</property>
+                        <method name="onCreate"><![CDATA[temp = reportContext.getPersistentGlobalVariable("dropDownList");
+this.text = this.text.replace("AirportList",temp);]]></method>
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<form id="theForm">
+Airport: <input name="search" class="searchField"/>
+</form>
+
+<div id="results"></div>
+
+<script type="text/javascript">
+(
+  function()
+  {
+
+      lookFor = "AirportList";
+      lookFor = lookFor.split("|");
+      var set = 0;
+      //alert(lookFor);
+
+      var form = document.getElementById("theForm");
+      var resultsDiv = document.getElementById("results");
+      var searchField = form.search;
+      searchField.focus();
+
+      // first, position the results:
+      var node = searchField;
+      var x = 0;
+      var y = 0;
+      while ( node != null )
+      {
+          x += node.offsetLeft;
+          y += node.offsetTop;
+          node = node.offsetParent;
+      }
+      resultsDiv.style.left = x + "px";
+      resultsDiv.style.top  = (y + 20) + "px";
+      
+      // now, attach the keyup handler to the search field:
+      searchField.onkeyup = function()
+      {
+      	  
+      	  if(set == 0){
+      	  document.getElementById('searchDiv').style.height = "220px";
+      	  resultsDiv.style.height = "180px";
+          resultsDiv.style.overflow = "scroll";
+          set = 1;
+          }
+          if (searchField.value.length == 0){
+      			resultsDiv.style.display = "none";
+                document.getElementById('searchDiv').style.height = "";
+          	}
+          var txt = this.value.toLowerCase();
+          if ( txt.length == 0 ) return;
+
+          var txtRE = new RegExp( "(" + txt + ")", "ig" );
+          // now...do we have any matches?
+          var top = 0;
+          for ( var s = 0; s < lookFor.length; s++ )
+          {
+              var srch = lookFor[s];
+              if ( srch.toLowerCase().indexOf(txt) >= 0 )
+              {
+                  srch = srch.replace( txtRE, "<span>$1</span>" );
+                  var div = document.createElement("div");
+                  div.innerHTML = srch;
+                  div.onclick = function() {
+                  	  searchField.blur();
+                  	  resultsDiv.focus();
+                      searchField.value = this.innerHTML.replace(/\<\/?span\>/ig,"");
+                      resultsDiv.style.display = "none";
+                      document.getElementById('searchDiv').style.height = "";
+                      set = 0;
+                      window.location = "http://demo.actuate.com/iportal/executereport.do?__locale=en_US&amp;__vp=Default%20Volume&amp;volume=Default%20Volume&amp;closex=true&amp;__executableName=%2FHome%2FdevSite%2FFDA2.rptdesign%3B1&amp;__requesttype=immediate&amp;__format=html&amp;Airport=" + searchField.value;
+                      //http://127.0.0.1:55608/iportal/executereport.do?__locale=en_US&amp;__svg=false&amp;__timezone=US%2FIndiana-Starke&amp;__masterpage=true&amp;__dpi=96&amp;__vp=workgroup&amp;closex=true&amp;__executableName=C%3A%2FUsers%2Fmwilliams%2Fworkspace%2FiHub3%2FBMDK%2FReport%20Designs%2FFDA.rptdesign&amp;__requesttype=immediate
+                      //"http://demo.actuate.com/iportal/executereport.do?__locale=en_US&amp;__vp=Default%20Volume&amp;volume=Default%20Volume&amp;closex=true&amp;__executableName=%2FHome%2FdevSite%2FFDA.rptdesign%3B1&amp;__requesttype=immediate&amp;__format=html&amp;Airport=" + searchField.value;
+                  };
+                  div.style.top = top + "px";
+                  //div.style.borderTopColor = "black";
+                  //div.style.borderTopWidth = "1px";
+                  //div.style.borderTopStyle = "solid";
+                  top += 20;
+                  resultsDiv.appendChild(div);
+                  resultsDiv.style.display = "block";
+                  resultsDiv.style.borderColor = "black";
+                  resultsDiv.style.borderWidth = "1px";
+                  resultsDiv.style.borderStyle = "solid";
+              }
+          }
+      }
+      // and the keydown handler:
+      searchField.onkeydown = function() 
+      {
+          while ( resultsDiv.firstChild != null )
+          {
+              resultsDiv.removeChild( resultsDiv.firstChild );          
+          }
+          resultsDiv.style.display = "none";
+      }
+      
+      searchField.onblur = function(){
+      		if (searchField.value.length == 0){
+      			resultsDiv.style.display = "none";
+                document.getElementById('searchDiv').style.height = "";
+          	}
+      }
+      
+  }
+)();
+
+	  
+</script>]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="23">
+                <expression name="bookmark" type="javascript">"3col_1"</expression>
+                <property name="backgroundColor">gray</property>
+                <cell id="24">
+                    <property name="colSpan">6</property>
+                    <property name="rowSpan">1</property>
+                    <label id="72">
+                        <property name="color">white</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingLeft">10pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <property name="paddingRight">10pt</property>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Text2"</expression>
+                        <text-property name="text">THE DELAYS ACCOUNT FOR A COLLECTIVE</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="27">
+                <expression name="bookmark" type="javascript">"3col_2"</expression>
+                <cell id="28">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingLeft">1pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="paddingRight">1pt</property>
+                    <property name="textAlign">center</property>
+                    <image id="71">
+                        <property name="height">140px</property>
+                        <property name="width">140px</property>
+                        <expression name="bookmark" type="javascript">"icon1"</expression>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">images/Circle-plane.png</expression>
+                    </image>
+                </cell>
+                <cell id="29">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingLeft">1pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="paddingRight">1pt</property>
+                    <property name="textAlign">center</property>
+                    <image id="54">
+                        <property name="height">140px</property>
+                        <property name="width">140px</property>
+                        <expression name="bookmark" type="javascript">"icon2"</expression>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">images/Circle-clockcolor.png</expression>
+                    </image>
+                </cell>
+                <cell id="213">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingLeft">1pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="paddingRight">1pt</property>
+                    <property name="textAlign">center</property>
+                    <image id="55">
+                        <property name="height">140px</property>
+                        <property name="width">140px</property>
+                        <expression name="bookmark" type="javascript">"icon3"</expression>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">images/Circle-wrenchcolor.png</expression>
+                    </image>
+                </cell>
+            </row>
+            <row id="31">
+                <expression name="bookmark" type="javascript">"3col_3"</expression>
+                <cell id="32">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <data id="77">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                        </structure>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Value1"</expression>
+                        <property name="resultSetColumn">DelayedFlights</property>
+                    </data>
+                    <label id="80">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingTop">0pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Label1"</expression>
+                        <text-property name="text">Delayed Flights</text-property>
+                    </label>
+                </cell>
+                <cell id="105">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <data id="78">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                        </structure>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Value2"</expression>
+                        <property name="resultSetColumn">MinutesLost</property>
+                    </data>
+                    <label id="81">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingTop">0pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Label2"</expression>
+                        <text-property name="text">Minutes Lost</text-property>
+                    </label>
+                </cell>
+                <cell id="214">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <data id="79">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Percent</property>
+                            <property name="pattern">###0.00%{RoundingMode=HALF_UP}</property>
+                        </structure>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Value3"</expression>
+                        <property name="resultSetColumn">PercentDelayed</property>
+                    </data>
+                    <label id="82">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingTop">0pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Label3"</expression>
+                        <text-property name="text">% of Flights Delayed</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="35">
+                <expression name="bookmark" type="javascript">"3col_4"</expression>
+                <property name="backgroundColor">gray</property>
+                <cell id="36">
+                    <property name="colSpan">6</property>
+                    <property name="rowSpan">1</property>
+                    <label id="73">
+                        <property name="fontSize">12pt</property>
+                        <property name="color">white</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingLeft">10pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <property name="paddingRight">10pt</property>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Text3"</expression>
+                        <text-property name="text">WHICH IS THE EQUIVALENT OF</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="39">
+                <expression name="bookmark" type="javascript">"3col_5"</expression>
+                <cell id="40">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="textAlign">center</property>
+                    <image id="56">
+                        <property name="height">140px</property>
+                        <property name="width">140px</property>
+                        <expression name="bookmark" type="javascript">"icon4"</expression>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">images/Circle-people.png</expression>
+                    </image>
+                </cell>
+                <cell id="41">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="textAlign">center</property>
+                    <image id="57">
+                        <property name="height">140px</property>
+                        <property name="width">140px</property>
+                        <expression name="bookmark" type="javascript">"icon5"</expression>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">images/Circle-clockcolorflip.png</expression>
+                    </image>
+                </cell>
+                <cell id="216">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="textAlign">center</property>
+                    <image id="58">
+                        <property name="height">140px</property>
+                        <property name="width">140px</property>
+                        <expression name="bookmark" type="javascript">"icon6"</expression>
+                        <method name="onCreate"><![CDATA[if(row["ComparedToAverage"] < 0){
+	this.URI = "images/Circle-arrowdown.png";
+}
+if(row["ComparedToAverage"] > 0){
+	this.URI = "images/Circle-arrowup.png";
+}]]></method>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">images/Circle-dash.png</expression>
+                    </image>
+                </cell>
+            </row>
+            <row id="43">
+                <expression name="bookmark" type="javascript">"3col_6"</expression>
+                <cell id="44">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <data id="87">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                        </structure>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Value4"</expression>
+                        <property name="resultSetColumn">PeopleFrustrated</property>
+                    </data>
+                    <label id="84">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Label4"</expression>
+                        <text-property name="text">People Frustrated</text-property>
+                    </label>
+                </cell>
+                <cell id="107">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <data id="88">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                        </structure>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Value5"</expression>
+                        <property name="resultSetColumn">MinutesInconvenienced</property>
+                    </data>
+                    <label id="86">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Label5"</expression>
+                        <text-property name="text">Minutes Inconvenienced</text-property>
+                    </label>
+                </cell>
+                <cell id="217">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <data id="89">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Percent</property>
+                            <property name="pattern">###0.00%{RoundingMode=HALF_UP}</property>
+                        </structure>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Value6"</expression>
+                        <property name="resultSetColumn">ComparedToAverage</property>
+                    </data>
+                    <label id="90">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Label6"</expression>
+                        <method name="onCreate"><![CDATA[if(row["ComparedToAverage"] != 0){
+	this.text = "Compared to Average Delay Chance";
+}]]></method>
+                        <text-property name="text">Same as Average Delay Chance</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="249">
+                <expression name="bookmark" type="javascript">"2col_1"</expression>
+                <property name="backgroundColor">gray</property>
+                <property name="fontSize">12pt</property>
+                <property name="borderBottomColor">#FFFFFF</property>
+                <property name="borderBottomStyle">solid</property>
+                <property name="borderBottomWidth">medium</property>
+                <cell id="250">
+                    <property name="colSpan">6</property>
+                    <property name="rowSpan">1</property>
+                    <property name="textAlign">center</property>
+                    <label id="256">
+                        <property name="color">white</property>
+                        <expression name="bookmark" type="javascript">"Text5"</expression>
+                        <text-property name="text">THE DELAYS ACCOUNT FOR</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="242">
+                <expression name="bookmark" type="javascript">"2col_2"</expression>
+                <property name="backgroundColor">gray</property>
+                <property name="fontSize">12pt</property>
+                <cell id="243">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <property name="textAlign">center</property>
+                    <label id="257">
+                        <property name="color">white</property>
+                        <expression name="bookmark" type="javascript">"Text6"</expression>
+                        <text-property name="text">A COLLECTIVE</text-property>
+                    </label>
+                </cell>
+                <cell id="246">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <property name="textAlign">center</property>
+                    <label id="258">
+                        <property name="color">white</property>
+                        <expression name="bookmark" type="javascript">"Text7"</expression>
+                        <text-property name="text">WHICH IS EQUIVALENT TO</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="235">
+                <expression name="bookmark" type="javascript">"2col_3"</expression>
+                <cell id="236">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <property name="textAlign">center</property>
+                    <image id="275">
+                        <property name="height">140px</property>
+                        <property name="width">140px</property>
+                        <expression name="bookmark" type="javascript">"icon1_2col"</expression>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">images/Circle-plane.png</expression>
+                    </image>
+                    <data id="276">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                        </structure>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Value1_2col"</expression>
+                        <property name="resultSetColumn">DelayedFlights</property>
+                    </data>
+                    <label id="277">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingTop">0pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Label1_2col"</expression>
+                        <text-property name="text">Delayed Flights</text-property>
+                    </label>
+                </cell>
+                <cell id="239">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <property name="textAlign">center</property>
+                    <image id="272">
+                        <property name="height">140px</property>
+                        <property name="width">140px</property>
+                        <expression name="bookmark" type="javascript">"icon4_2col"</expression>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">images/Circle-people.png</expression>
+                    </image>
+                    <data id="273">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                        </structure>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Value4_2col"</expression>
+                        <property name="resultSetColumn">PeopleFrustrated</property>
+                    </data>
+                    <label id="274">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Label4_2col"</expression>
+                        <text-property name="text">People Frustrated</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="228">
+                <expression name="bookmark" type="javascript">"2col_4"</expression>
+                <cell id="229">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <property name="textAlign">center</property>
+                    <image id="269">
+                        <property name="height">140px</property>
+                        <property name="width">140px</property>
+                        <expression name="bookmark" type="javascript">"icon2_2col"</expression>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">images/Circle-clockcolor.png</expression>
+                    </image>
+                    <data id="270">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                        </structure>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Value2_2col"</expression>
+                        <property name="resultSetColumn">MinutesLost</property>
+                    </data>
+                    <label id="271">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingTop">0pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Label2_2col"</expression>
+                        <text-property name="text">Minutes Lost</text-property>
+                    </label>
+                </cell>
+                <cell id="232">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <property name="textAlign">center</property>
+                    <image id="266">
+                        <property name="height">140px</property>
+                        <property name="width">140px</property>
+                        <expression name="bookmark" type="javascript">"icon5_2col"</expression>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">images/Circle-clockcolorflip.png</expression>
+                    </image>
+                    <data id="267">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                        </structure>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Value5_2col"</expression>
+                        <property name="resultSetColumn">MinutesInconvenienced</property>
+                    </data>
+                    <label id="268">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Label5_2col"</expression>
+                        <text-property name="text">Minutes Inconvenienced</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="221">
+                <expression name="bookmark" type="javascript">"2col_5"</expression>
+                <cell id="222">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <property name="textAlign">center</property>
+                    <image id="263">
+                        <property name="height">140px</property>
+                        <property name="width">140px</property>
+                        <expression name="bookmark" type="javascript">"icon3_2col"</expression>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">images/Circle-wrenchcolor.png</expression>
+                    </image>
+                    <data id="264">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Percent</property>
+                            <property name="pattern">###0.00%{RoundingMode=HALF_UP}</property>
+                        </structure>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Value3_2col"</expression>
+                        <property name="resultSetColumn">PercentDelayed</property>
+                    </data>
+                    <label id="265">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingTop">0pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Label3_2col"</expression>
+                        <text-property name="text">% of Flights Delayed</text-property>
+                    </label>
+                </cell>
+                <cell id="225">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <property name="textAlign">center</property>
+                    <image id="260">
+                        <property name="height">140px</property>
+                        <property name="width">140px</property>
+                        <expression name="bookmark" type="javascript">"icon6_2col"</expression>
+                        <method name="onCreate"><![CDATA[if(row["ComparedToAverage"] < 0){
+	this.URI = "images/Circle-arrowdown.png";
+}
+if(row["ComparedToAverage"] > 0){
+	this.URI = "images/Circle-arrowup.png";
+}]]></method>
+                        <property name="source">file</property>
+                        <expression name="uri" type="constant">images/Circle-dash.png</expression>
+                    </image>
+                    <data id="261">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <structure name="numberFormat">
+                            <property name="category">Percent</property>
+                            <property name="pattern">###0.00%{RoundingMode=HALF_UP}</property>
+                        </structure>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Value6_2col"</expression>
+                        <property name="resultSetColumn">ComparedToAverage</property>
+                    </data>
+                    <label id="262">
+                        <property name="fontSize">12pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Label6_2col"</expression>
+                        <method name="onCreate"><![CDATA[if(row["ComparedToAverage"] != 0){
+	this.text = "Compared to Average Delay Chance";
+}]]></method>
+                        <text-property name="text">Same as Average Delay Chance</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="47">
+                <method name="onCreate"><![CDATA[if(row["ComparedToAverage"] < 0){
+	this.getStyle().backgroundColor = "RGB(0,255,128)";
+}
+if(row["ComparedToAverage"] > 0){
+	this.getStyle().backgroundColor = "RGB(255,128,128)";
+}]]></method>
+                <property name="backgroundColor">silver</property>
+                <cell id="48">
+                    <property name="colSpan">6</property>
+                    <property name="rowSpan">1</property>
+                    <property name="backgroundRepeat">no-repeat</property>
+                    <property name="backgroundSizeHeight">auto</property>
+                    <property name="backgroundSizeWidth">auto</property>
+                    <text id="61">
+                        <property name="fontSize">12pt</property>
+                        <property name="color">black</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <property name="textAlign">center</property>
+                        <expression name="bookmark" type="javascript">"Text4"</expression>
+                        <method name="onCreate"><![CDATA[if(row["ComparedToAverage"] < 0){
+	this.text = "Be sure to arrive on time, flights are less likely to be delayed out of " + row["airport_name"];
+}
+else if(row["ComparedToAverage"] > 0){
+	this.text = "Charge your phone or bring a good book, flights are more likely to be delayed out of " + row["airport_name"];
+}
+else{
+	if(params["Airport"] != null &amp;&amp; params["Airport"] != ""){
+		this.text = "Your delay chances are exactly average at " + row["airport_name"] + ". Make sure you're on time, but bring a book just in case."
+	}
+}
+]]></method>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Enter your departure airport above for more personalized flight delay information.]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="91">
+                <cell id="92">
+                    <property name="backgroundRepeat">no-repeat</property>
+                    <property name="backgroundSizeHeight">auto</property>
+                    <property name="backgroundSizeWidth">auto</property>
+                    <text id="70">
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<script>
+	oldw = 400;
+	oldh = 220;
+	
+adjustPage();
+	
+function adjustPage(){	
+	pageWidth = window.innerWidth;
+	neww = pageWidth/3;
+	if(neww < 200){
+		neww = 200;
+	}
+	newihw = pageWidth/7;
+	//conv = neww/oldw;
+	newh = (neww/oldw) * oldh;
+	
+	if(pageWidth < 500){
+		document.getElementById("3col_1").style.display = "none";
+		document.getElementById("3col_2").style.display = "none";
+		document.getElementById("3col_3").style.display = "none";
+		document.getElementById("3col_4").style.display = "none";
+		document.getElementById("3col_5").style.display = "none";
+		document.getElementById("3col_6").style.display = "none";
+		document.getElementById("2col_1").style.display = "";
+		document.getElementById("2col_2").style.display = "";
+		document.getElementById("2col_3").style.display = "";
+		document.getElementById("2col_4").style.display = "";
+		document.getElementById("2col_5").style.display = "";
+	}
+	else{
+		document.getElementById("3col_1").style.display = "";
+		document.getElementById("3col_2").style.display = "";
+		document.getElementById("3col_3").style.display = "";
+		document.getElementById("3col_4").style.display = "";
+		document.getElementById("3col_5").style.display = "";
+		document.getElementById("3col_6").style.display = "";
+		document.getElementById("2col_1").style.display = "none";
+		document.getElementById("2col_2").style.display = "none";
+		document.getElementById("2col_3").style.display = "none";
+		document.getElementById("2col_4").style.display = "none";
+		document.getElementById("2col_5").style.display = "none";
+	}
+	
+	
+	document.getElementById("HeaderImage").style.width = neww + "px";
+	document.getElementById("HeaderImage").style.height = newh + "px";
+	document.getElementById("icon1").style.width = newihw + "px";
+	document.getElementById("icon1").style.height = newihw + "px";
+	document.getElementById("icon2").style.width = newihw + "px";
+	document.getElementById("icon2").style.height = newihw + "px";
+	document.getElementById("icon3").style.width = newihw + "px";
+	document.getElementById("icon3").style.height = newihw + "px";
+	document.getElementById("icon4").style.width = newihw + "px";
+	document.getElementById("icon4").style.height = newihw + "px";
+	document.getElementById("icon5").style.width = newihw + "px";
+	document.getElementById("icon5").style.height = newihw + "px";
+	document.getElementById("icon6").style.width = newihw + "px";
+	document.getElementById("icon6").style.height = newihw + "px";
+	
+	document.getElementById("icon1_2col").style.width = newihw + "px";
+	document.getElementById("icon1_2col").style.height = newihw + "px";
+	document.getElementById("icon2_2col").style.width = newihw + "px";
+	document.getElementById("icon2_2col").style.height = newihw + "px";
+	document.getElementById("icon3_2col").style.width = newihw + "px";
+	document.getElementById("icon3_2col").style.height = newihw + "px";
+	document.getElementById("icon4_2col").style.width = newihw + "px";
+	document.getElementById("icon4_2col").style.height = newihw + "px";
+	document.getElementById("icon5_2col").style.width = newihw + "px";
+	document.getElementById("icon5_2col").style.height = newihw + "px";
+	document.getElementById("icon6_2col").style.width = newihw + "px";
+	document.getElementById("icon6_2col").style.height = newihw + "px";
+	
+	oldf = 10;
+	newf = pageWidth / 70;
+	newf_2col = pageWidth / 50
+	if(newf < 14){
+		newf = 14;
+	}
+	
+	document.getElementById("MyLabel").style.fontSize = newf + "px";
+	document.getElementById("Text2").style.fontSize = newf + "px";
+	document.getElementById("Text3").style.fontSize = newf + "px";
+	document.getElementById("Text4").style.fontSize = newf + "px";
+	document.getElementById("Value1").style.fontSize = newf + "px";
+	document.getElementById("Value2").style.fontSize = newf + "px";
+	document.getElementById("Value3").style.fontSize = newf + "px";
+	document.getElementById("Value4").style.fontSize = newf + "px";
+	document.getElementById("Value5").style.fontSize = newf + "px";
+	document.getElementById("Value6").style.fontSize = newf + "px";
+	document.getElementById("Label1").style.fontSize = newf + "px";
+	document.getElementById("Label2").style.fontSize = newf + "px";
+	document.getElementById("Label3").style.fontSize = newf + "px";
+	document.getElementById("Label4").style.fontSize = newf + "px";
+	document.getElementById("Label5").style.fontSize = newf + "px";
+	document.getElementById("Label6").style.fontSize = newf + "px";
+	document.getElementById("theForm").style.fontSize = newf + "px";
+    document.getElementById("results").style.fontSize = newf + "px";
+    document.getElementById("theForm").search.style.fontSize = newf + "px";
+    
+    document.getElementById("Text5").style.fontSize = newf + "px";
+	document.getElementById("Text6").style.fontSize = newf + "px";
+	document.getElementById("Text7").style.fontSize = newf + "px";
+	document.getElementById("Value1_2col").style.fontSize = newf + "px";
+	document.getElementById("Value2_2col").style.fontSize = newf + "px";
+	document.getElementById("Value3_2col").style.fontSize = newf + "px";
+	document.getElementById("Value4_2col").style.fontSize = newf + "px";
+	document.getElementById("Value5_2col").style.fontSize = newf + "px";
+	document.getElementById("Value6_2col").style.fontSize = newf + "px";
+	document.getElementById("Label1_2col").style.fontSize = newf + "px";
+	document.getElementById("Label2_2col").style.fontSize = newf + "px";
+	document.getElementById("Label3_2col").style.fontSize = newf + "px";
+	document.getElementById("Label4_2col").style.fontSize = newf + "px";
+	document.getElementById("Label5_2col").style.fontSize = newf + "px";
+	document.getElementById("Label6_2col").style.fontSize = newf + "px";
+}
+
+window.addEventListener('resize', adjustPage);
+
+</script>]]></text-property>
+                    </text>
+                </cell>
+                <cell id="195">
+                    <property name="backgroundRepeat">no-repeat</property>
+                    <property name="backgroundSizeHeight">auto</property>
+                    <property name="backgroundSizeWidth">auto</property>
+                </cell>
+                <cell id="93">
+                    <property name="backgroundRepeat">no-repeat</property>
+                    <property name="backgroundSizeHeight">auto</property>
+                    <property name="backgroundSizeWidth">auto</property>
+                </cell>
+                <cell id="207">
+                    <property name="backgroundRepeat">no-repeat</property>
+                    <property name="backgroundSizeHeight">auto</property>
+                    <property name="backgroundSizeWidth">auto</property>
+                </cell>
+                <cell id="219">
+                    <property name="backgroundRepeat">no-repeat</property>
+                    <property name="backgroundSizeHeight">auto</property>
+                    <property name="backgroundSizeWidth">auto</property>
+                </cell>
+                <cell id="94">
+                    <property name="backgroundRepeat">no-repeat</property>
+                    <property name="backgroundSizeHeight">auto</property>
+                    <property name="backgroundSizeWidth">auto</property>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

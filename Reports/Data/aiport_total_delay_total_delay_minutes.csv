@@ -1,0 +1,202 @@
+airport,airport_city,airport_state,airport_name,total_flights,total_delays,total_delay_minutes
+string,string,string,string,integer,integer,float
+ABE,Allentown/Bethlehem/Easton,PA,Lehigh Valley International,44870,10932,1125963.861
+ABI,Abilene,TX,Abilene Regional,27044,6623,645120.0472
+ABQ,Albuquerque,NM,Albuquerque International Sunport,356418,70701,6385500.408
+ACT,Waco,TX,Waco Regional,18054,3576,290404.1036
+ACV,Arcata/Eureka,CA,Arcata,36125,10780,1043116.067
+AEX,Alexandria,LA,Alexandria International,31888,7571,721788.6945
+AGS,Augusta,GA,Augusta Regional at Bush Field,30639,8315,861784.1119
+ALB,Albany,NY,Albany International,133262,32780,3260401.977
+AMA,Amarillo,TX,Rick Husband Amarillo International,75848,17701,1538725.207
+ANC,Anchorage,AK,Ted Stevens Anchorage International,191491,47283,4221028.936
+ASE,Aspen,CO,Aspen Pitkin County Sardy Field,38628,11893,887066.4783
+ATL,Atlanta,GA,Hartsfield-Jackson Atlanta International,4122124,980419,105069944.8
+ATW,Appleton,WI,Outagamie County Regional,43102,11543,1102696.444
+AUS,Austin,TX,Austin - Bergstrom International,448560,96271,9303524.834
+AVL,Asheville,NC,Asheville Regional,44234,10993,1112598.972
+AVP,Scranton/Wilkes-Barre,PA,Wilkes Barre Scranton International,23070,6650,710918.583
+AZO,Kalamazoo,MI,Kalamazoo/Battle Creek International,32894,8366,689384.3021
+BDL,Hartford,CT,Bradley International,281082,65398,6286555.543
+BFL,Bakersfield,CA,Meadows Field,41253,7652,734174.5571
+BGR,Bangor,ME,Bangor International,27049,7893,810072.5218
+BHM,Birmingham,AL,Birmingham-Shuttlesworth International,206024,46751,4484358.687
+BIL,Billings,MT,Billings Logan International,42839,7723,671516.8748
+BIS,Bismarck/Mandan,ND,Bismarck Municipal,29449,5997,534650.7318
+BMI,Bloomington/Normal,IL,Central Illinois Regional,37619,10322,1040664.132
+BNA,Nashville,TN,Nashville International,578516,123393,11865104.3
+BOI,Boise,ID,Boise Air Terminal,148456,30279,2841002.805
+BOS,Boston,MA,Logan International,1192185,299924,30908471.18
+BRO,Brownsville,TX,Brownsville South Padre Island International,21191,4661,427518.8215
+BTR,Baton Rouge,LA,Baton Rouge Metropolitan/Ryan Field,92437,23253,2223980.018
+BTV,Burlington,VT,Burlington International,64385,17931,1890521.018
+BUF,Buffalo,NY,Buffalo Niagara International,254034,63058,6409615.449
+BUR,Burbank,CA,Bob Hope,284632,54039,4539090.037
+BWI,Baltimore,MD,Baltimore/Washington International Thurgood Marshall,1054087,208587,20414310.43
+BZN,Bozeman,MT,Bozeman Yellowstone International,44871,8733,741372.2124
+CAE,Columbia,SC,Columbia Metropolitan,96494,26728,2953008.905
+CAK,Akron,OH,Akron-Canton Regional,91064,21610,2265324.707
+CHA,Chattanooga,TN,Lovell Field,47681,11258,1130849.017
+CHS,Charleston,SC,Charleston AFB/International,141190,35102,3389582.096
+CID,Cedar Rapids/Iowa City,IA,The Eastern Iowa,79960,20440,1849598.685
+CLD,Carlsbad,CA,McClellan-Palomar,23413,3764,275644.4124
+CLE,Cleveland,OH,Cleveland-Hopkins International,666353,143523,14703119.86
+CLT,Charlotte,NC,Charlotte Douglas International,1258574,255438,22698670.9
+CMH,Columbus,OH,Port Columbus International,331462,80381,7856795.524
+CMI,Champaign/Urbana,IL,University of Illinois/Willard,27474,8542,906148.0541
+COS,Colorado Springs,CO,City of Colorado Springs Municipal,137594,32191,3162293.714
+CPR,Casper,WY,Casper/Natrona County International,27741,4731,403176.2101
+CRP,Corpus Christi,TX,Corpus Christi International,75568,16952,1515892.54
+CRW,Charleston/Dunbar,WV,Yeager,40816,10325,1034909.242
+CVG,Cincinnati,OH,Cincinnati/Northern Kentucky International,932387,178604,16500349.38
+DAB,Daytona Beach,FL,Daytona Beach International,27735,6986,685425.4608
+DAL,Dallas,TX,Dallas Love Field,480188,91159,8035502.743
+DAY,Dayton,OH,James M Cox/Dayton International,141924,34177,3364626.725
+DCA,Washington,DC,Ronald Reagan Washington National,849297,187024,16672241.4
+DEN,Denver,CO,Denver International,2252390,446193,43091690.2
+DFW,Dallas/Fort Worth,TX,Dallas/Fort Worth International,2899420,601046,61466393.25
+DRO,Durango,CO,Durango La Plata County,28108,5592,534132.8069
+DSM,Des Moines,IA,Des Moines International,137709,35774,3468759.551
+DTW,Detroit,MI,Detroit Metro Wayne County,1411826,289844,29031995.44
+ECP,Panama City,FL,Northwest Florida Beaches International,21377,4556,448118.1864
+EGE,Eagle,CO,Eagle County Regional,22831,6480,687864.8306
+ELP,El Paso,TX,El Paso International,214778,44485,4103915.196
+EUG,Eugene,OR,Mahlon Sweet Field,55629,11301,1055078.532
+EVV,Evansville,IN,Evansville Regional,47714,11640,1045772.525
+EWR,Newark,NJ,Newark Liberty International,1356023,461259,56955895.76
+FAI,Fairbanks,AK,Fairbanks International,47774,10127,865975.4683
+FAR,Fargo,ND,Hector International,50501,12039,1152984.224
+FAT,Fresno,CA,Fresno Yosemite International,131722,25360,2459941.146
+FAY,Fayetteville,NC,Fayetteville Regional/Grannis Field,26037,6920,723118.1984
+FCA,Kalispell,MT,Glacier Park International,26115,4636,378284.4155
+FLL,Fort Lauderdale,FL,Fort Lauderdale-Hollywood International,670533,160277,15708045.82
+FNT,Flint,MI,Bishop International,62629,15213,1480342.228
+FSD,Sioux Falls,SD,Joe Foss Field,59746,14799,1455454.506
+FWA,Fort Wayne,IN,Fort Wayne International,54135,14043,1323048.478
+GEG,Spokane,WA,Spokane International,130810,26456,2337951.949
+GJT,Grand Junction,CO,Grand Junction Regional,48738,8903,803568.4349
+GNV,Gainesville,FL,Gainesville Regional,24818,6618,695034.3721
+GPT,Gulfport/Biloxi,MS,Gulfport-Biloxi International,63639,14840,1361764.795
+GRB,Green Bay,WI,Austin Straubel International,64642,16490,1564979.299
+GRK,Killeen,TX,Robert Gray AAF,38295,9526,853830.3855
+GRR,Grand Rapids,MI,Gerald R. Ford International,141865,35250,3397373.243
+GSO,Greensboro/High Point,NC,Piedmont Triad International,127394,33291,3306179.006
+GSP,Greer,SC,Greenville-Spartanburg International,114201,28907,2861733.074
+GTF,Great Falls,MT,Great Falls International,26129,4555,368044.295
+HNL,Honolulu,HI,Honolulu International,532402,68355,7053693.32
+HOU,Houston,TX,William P Hobby,559177,116558,10046018.97
+HPN,White Plains,NY,Westchester County,93054,24582,2467350.874
+HRL,Harlingen/San Benito,TX,Valley International,50762,10942,972446.4505
+HSV,Huntsville,AL,Huntsville International-Carl T Jones Field,100161,23247,2268912.011
+IAD,Washington,DC,Washington Dulles International,889400,200312,21268838.43
+IAH,Houston,TX,George Bush Intercontinental/Houston,1935395,385527,38968052.07
+ICT,Wichita,KS,Wichita Mid-Continent,121522,31026,3034353.365
+IDA,Idaho Falls,ID,Idaho Falls Regional,30449,4940,392552.245
+ILM,Wilmington,NC,Wilmington International,37282,8691,850019.2045
+IND,Indianapolis,IN,Indianapolis International,375172,82725,7987613.031
+ISP,Islip,NY,Long Island MacArthur,94468,19536,1816508.663
+ITO,Hilo,HI,Hilo International,67815,5026,398173.0949
+JAC,Jackson,WY,Jackson Hole,34908,8296,782808.686
+JAN,Jackson/Vicksburg,MS,Jackson Medgar Wiley Evers International,114607,27017,2500653.636
+JAX,Jacksonville,FL,Jacksonville International,297247,67055,6456940.591
+JFK,New York,NY,John F. Kennedy International,1092107,303651,33611813.51
+JNU,Juneau,AK,Juneau International,43631,9636,887674.4217
+KOA,Kona,HI,Kona International Airport at Keahole,118918,12424,1191646.874
+KTN,Ketchikan,AK,Ketchikan International,24166,5242,481288.3125
+LAN,Lansing,MI,Capital Region International,36023,9216,865957.0039
+LAS,Las Vegas,NV,McCarran International,1602207,326533,30435180.24
+LAX,Los Angeles,CA,Los Angeles International,2218663,456041,42246452.34
+LBB,Lubbock,TX,Lubbock Preston Smith International,83979,19652,1744730.719
+LEX,Lexington,KY,Blue Grass,90209,22182,2177743.295
+LFT,Lafayette,LA,Lafayette Regional,52298,12155,1147144.784
+LGA,New York,NY,LaGuardia,1135802,358295,36632599.2
+LGB,Long Beach,CA,Long Beach Airport,136642,23011,2228541.917
+LIH,Lihue,HI,Lihue Airport,119463,11580,1035542.321
+LIT,Little Rock,AR,Bill and Hillary Clinton Nat Adams Field,172203,43527,4217530.69
+LNK,Lincoln,NE,Lincoln Airport,28771,7314,779652.2096
+LRD,Laredo,TX,Laredo International,25410,5920,533420.4916
+MAF,Midland/Odessa,TX,Midland International,78608,18349,1637759.059
+MBS,Saginaw/Bay City/Midland,MI,MBS International,29172,7477,722218.3324
+MCI,Kansas City,MO,Kansas City International,547237,121209,11388843.42
+MCO,Orlando,FL,Orlando International,1218764,253276,25352981.59
+MDT,Harrisburg,PA,Harrisburg International,72619,18123,1860801.478
+MDW,Chicago,IL,Chicago Midway International,906423,177690,16622945.26
+MEM,Memphis,TN,Memphis International,576148,113501,11002868.15
+MFE,Mission/McAllen/Edinburg,TX,McAllen Miller International,40892,9361,905207.2695
+MFR,Medford,OR,Rogue Valley International - Medford,47726,11479,1097262.326
+MGM,Montgomery,AL,Montgomery Regional,39567,9467,993264.6546
+MHT,Manchester,NH,Manchester-Boston Regional,168534,39586,3890267.024
+MIA,Miami,FL,Miami International,704219,162540,16751897.2
+MKE,Milwaukee,WI,General Mitchell International,347187,78423,7420532.518
+MLI,Moline,IL,Quad City International,65011,16665,1636082.763
+MLU,Monroe,LA,Monroe Regional,27258,6961,688871.1076
+MOB,Mobile,AL,Mobile Regional,59496,14276,1358665.029
+MRY,Monterey,CA,Monterey Regional,67771,13588,1141216.67
+MSN,Madison,WI,Dane County Regional-Truax Field,111906,29009,2779822.925
+MSO,Missoula,MT,Missoula International,36161,6502,537618.161
+MSP,Minneapolis,MN,Minneapolis-St Paul International,1307868,264506,26646905.32
+MSY,New Orleans,LA,Louis Armstrong New Orleans International,396484,84992,7753554.714
+MTJ,Montrose/Delta,CO,Montrose Regional,23151,4961,448542.8781
+MYR,Myrtle Beach,SC,Myrtle Beach International,53568,13046,1254423.01
+OAK,Oakland,CA,Metropolitan Oakland International,586598,112643,9437092.703
+OGG,Kahului,HI,Kahului Airport,208828,23665,2294666.197
+OKC,Oklahoma City,OK,Will Rogers World,228406,56102,5353942.108
+OMA,Omaha,NE,Eppley Airfield,237517,57190,5518203.682
+ONT,Ontario,CA,Ontario International,302989,59327,5162573.365
+ORD,Chicago,IL,Chicago O'Hare International,3381533,913899,106879281.9
+ORF,Norfolk,VA,Norfolk International,179467,44599,4405138.128
+PBI,West Palm Beach/Palm Beach,FL,Palm Beach International,266044,65397,6435072.587
+PDX,Portland,OR,Portland International,553924,108905,10212849.64
+PFN,Panama City,FL,Bay County,21278,6205,650066.0315
+PHF,Newport News/Williamsburg,VA,Newport News/Williamsburg International,51569,12114,1306764.131
+PHL,Philadelphia,PA,Philadelphia International,990982,261325,27665164.55
+PHX,Phoenix,AZ,Phoenix Sky Harbor International,1895276,335349,29474457.08
+PIA,Peoria,IL,General Downing - Peoria International,45264,12288,1129592.388
+PIT,Pittsburgh,PA,Pittsburgh International,422766,94625,9251360.676
+PNS,Pensacola,FL,Pensacola Gulf Coast Regional,99032,23322,2131957.147
+PSC,Pasco/Kennewick/Richland,WA,Tri Cities,31640,5343,477180.2564
+PSP,Palm Springs,CA,Palm Springs International,119388,24264,2253880.498
+PVD,Providence,RI,Theodore Francis Green State,219386,49520,4797573.793
+PWM,Portland,ME,Portland International Jetport,75911,21360,2112484.812
+RAP,Rapid City,SD,Rapid City Regional,47004,9418,832396.4797
+RDM,Bend/Redmond,OR,Roberts Field,32867,5571,536496.0806
+RDU,Raleigh/Durham,NC,Raleigh-Durham International,548779,129769,12831866.92
+RIC,Richmond,VA,Richmond International,182577,46014,4789957.496
+RNO,Reno,NV,Reno/Tahoe International,234205,47688,4220021.158
+ROA,Roanoke,VA,Roanoke Regional/Woodrum Field,35301,9544,963686.4817
+ROC,Rochester,NY,Greater Rochester International,144219,38873,4102497.959
+RST,Rochester,MN,Rochester International,25459,6439,513604.039
+RSW,Fort Myers,FL,Southwest Florida International,268448,57989,5383302.449
+SAN,San Diego,CA,San Diego International,855192,174245,15160703.76
+SAT,San Antonio,TX,San Antonio International,408975,88483,8236681.339
+SAV,Savannah,GA,Savannah/Hilton Head International,119463,30787,3075207.1
+SBA,Santa Barbara,CA,Santa Barbara Municipal,120239,21453,1950916.726
+SBN,South Bend,IN,South Bend Airport,41610,10735,1057574.228
+SBP,San Luis Obispo,CA,San Luis County Regional,54597,10419,961350.9172
+SDF,Louisville,KY,Louisville International-Standiford Field,197882,46566,4573983.622
+SEA,Seattle,WA,Seattle/Tacoma International,1050866,218718,20646790.18
+SFO,San Francisco,CA,San Francisco International,1446910,407535,46391345.95
+SGF,Springfield,MO,Springfield-Branson National,83886,21654,2166082.228
+SGU,St. George,UT,St George Municipal,27124,4127,327514.1136
+SHV,Shreveport,LA,Shreveport Regional,70476,17215,1647416.734
+SJC,San Jose,CA,Norman Y. Mineta San Jose International,516046,95908,8136967.146
+SJU,San Juan,PR,Luis Munoz Marin International,240904,59303,6241993.383
+SLC,Salt Lake City,UT,Salt Lake City International,1332924,214779,19140037.02
+SMF,Sacramento,CA,Sacramento International,488275,98998,8772886.523
+SNA,Santa Ana,CA,John Wayne Airport-Orange County,458880,81410,6359325.763
+SRQ,Sarasota/Bradenton,FL,Sarasota/Bradenton International,61378,12766,1182341.191
+STL,St. Louis,MO,Lambert-St. Louis International,608941,126823,11982719
+STT,Charlotte Amalie,VI,Cyril E King,32401,7467,755749.8306
+SUN,Sun Valley/Hailey/Ketchum,ID,Friedman Memorial,25296,4410,240094.1154
+SWF,Newburgh/Poughkeepsie,NY,Stewart International,25882,7046,722630.3848
+SYR,Syracuse,NY,Syracuse Hancock International,110676,29838,3044924.158
+TLH,Tallahassee,FL,Tallahassee Regional,50367,11479,1144402.444
+TPA,Tampa,FL,Tampa International,730813,152066,14804852.71
+TRI,Bristol/Johnson City/Kingsport,TN,Tri-Cities Regional TN/VA,27051,6116,592246.3235
+TUL,Tulsa,OK,Tulsa International,213695,52963,5081691.684
+TUS,Tucson,AZ,Tucson International,226195,46815,4370075.198
+TVC,Traverse City,MI,Cherry Capital,36144,9624,955962.327
+TYS,Knoxville,TN,McGhee Tyson,128033,31953,3370993.305
+VPS,Valparaiso,FL,Northwest Florida Regional,67398,17979,1744588.766
+XNA,Fayetteville,AR,Northwest Arkansas Regional,133111,34713,3361899.064
+YUM,Yuma,AZ,Yuma MCAS/Yuma International,30821,4891,421687.1904

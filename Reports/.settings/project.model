@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.actuate.istudio.analysis.model:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.actuate.istudio.analysis.model="http:///com.actuate.istudio.analysis.model.ecore" name="Aerolytyx">
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="Flight Performance.rptdesign" path="/Aerolytyx/Report Designs/Flight Performance.rptdesign">
+    <dataMap key="//@files.1" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:Data" name="flight delay.data" path="/Aerolytyx/Data Objects/flight delay.data">
+    <targetReportsMap key="//@files.3" value="1"/>
+    <targetReportsMap key="//@files.0" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:DataDesign" name="flight delay.datadesign" path="/Aerolytyx/Data Objects/flight delay.datadesign">
+    <dataSets name="delay data">
+      <columns name="year"/>
+      <columns name="month"/>
+      <columns name="carrier"/>
+      <columns name="carrier_name"/>
+      <columns name="airport"/>
+      <columns name="city"/>
+      <columns name="state"/>
+      <columns name="airport_name"/>
+      <columns name="arr_flights"/>
+      <columns name="arr_del15"/>
+      <columns name="carrier_ct"/>
+      <columns name="weather_ct"/>
+      <columns name="nas_ct"/>
+      <columns name="security_ct"/>
+      <columns name="late_aircraft_ct"/>
+      <columns name="arr_cancelled"/>
+      <columns name="arr_diverted"/>
+      <columns name="arr_delay"/>
+      <columns name="carrier_delay"/>
+      <columns name="weather_delay"/>
+      <columns name="nas_delay"/>
+      <columns name="security_delay"/>
+      <columns name="late_aircraft_delay"/>
+    </dataSets>
+    <dataSets name="geographic">
+      <columns name="state"/>
+      <columns name="full_state"/>
+      <columns name="region"/>
+      <columns name="scale"/>
+    </dataSets>
+    <dataSets name="national delay data">
+      <columns name="year"/>
+      <columns name="US_arr_flights"/>
+      <columns name="US_arr_del15"/>
+      <columns name="US_carrier_ct"/>
+      <columns name="US_weather_ct"/>
+      <columns name="US_nas_ct"/>
+      <columns name="US_security_ct"/>
+      <columns name="US_late_aircraft_ct"/>
+      <columns name="US_arr_cancelled"/>
+      <columns name="US_arr_diverted"/>
+      <columns name="US_arr_delay"/>
+      <columns name="US_carrier_delay"/>
+      <columns name="US_weather_delay"/>
+      <columns name="US_nas_delay"/>
+      <columns name="US_security_delay"/>
+      <columns name="US_late_aircraft_delay"/>
+      <columns name="delay_percent" expression="row[&quot;US_arr_del15&quot;]/row[&quot;US_arr_flights&quot;]"/>
+    </dataSets>
+    <dataSets name="carrier delay">
+      <columns name="state"/>
+      <columns name="categories"/>
+      <columns name="total delay value"/>
+    </dataSets>
+    <dataSets name="weather delay">
+      <columns name="state"/>
+      <columns name="categories"/>
+      <columns name="total delay value"/>
+    </dataSets>
+    <dataSets name="nas delay">
+      <columns name="state"/>
+      <columns name="categories"/>
+      <columns name="total delay value"/>
+    </dataSets>
+    <dataSets name="late aircraft delay">
+      <columns name="state"/>
+      <columns name="categories"/>
+      <columns name="total delay value"/>
+    </dataSets>
+    <dataSets name="busier airport">
+      <columns name="state"/>
+      <columns name="busiest_airport"/>
+      <columns name="busiest_city"/>
+    </dataSets>
+    <dataSets name="worst airport">
+      <columns name="state"/>
+      <columns name="worst_airport"/>
+      <columns name="worst_delay"/>
+      <columns name="worst_city"/>
+    </dataSets>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="Flight Performance New.rptdesign" path="/Aerolytyx/Report Designs/Flight Performance New.rptdesign">
+    <dataMap key="//@files.1" value="1"/>
+  </files>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptLibrary" name="ThemesReportItems3.rptlibrary" path="/Aerolytyx/Report Libraries/ThemesReportItems3.rptlibrary" reports="//@files.5"/>
+  <files xsi:type="com.actuate.istudio.analysis.model:RptDesign" name="FlightDelayAnalysis.rptdesign" path="/Aerolytyx/Report Designs/FlightDelayAnalysis.rptdesign" libraries="//@files.4">
+    <dataSets name="Data Set">
+      <columns name="airport"/>
+      <columns name="airport_city"/>
+      <columns name="airport_state"/>
+      <columns name="airport_name"/>
+      <columns name="total_flights"/>
+      <columns name="total_delays"/>
+      <columns name="total_delay_minutes"/>
+    </dataSets>
+    <dataSets name="Data Set1">
+      <columns name="airport"/>
+      <columns name="airport_city"/>
+      <columns name="airport_state"/>
+      <columns name="airport_name"/>
+      <columns name="total_flights"/>
+      <columns name="total_delays"/>
+      <columns name="total_delay_minutes"/>
+    </dataSets>
+  </files>
+</com.actuate.istudio.analysis.model:Project>
